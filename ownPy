@@ -1,0 +1,18 @@
+import random
+from instapy import InstaPy
+from instapy import smart_run
+
+# login credentials
+insta_username = 'enricobaivo'
+insta_password = 'HeldenInstagram02657!'
+# Create session
+session = InstaPy(username=insta_username,
+                  password=insta_password,
+                  headless_browser=False,
+                  page_delay=10,
+                  bypass_security_challenge_using='sms')
+
+# settings
+# session.set_do_like(enabled=True, percentage=5)
+with smart_run(session):
+    session.like_by_tags(['osterbäckerei', 'Conditorin'], amount=10)
